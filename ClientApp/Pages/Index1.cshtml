@@ -1,0 +1,61 @@
+﻿@page
+@model ClientApp.Pages.Index1Model
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index1</title>
+</head>
+<body>
+    <h1>Prashant Check Services</h1>
+    Result 1 : @Model.Result1
+    <br />
+    Result 2 : @Model.Result2
+    <br>
+    Result 3 : @Model.Result3
+
+    <h3>Product Info</h3>
+    <table border="1">
+        <tr>
+            <td>Id</td>
+            <td>@Model.product.Id</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>@Model.product.Name</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>@Model.product.Price</td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>@Model.product.Quantity</td>
+        </tr>
+    </table>
+
+    <h3>Product List</h3>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        @foreach(var product in Model.products)
+        {
+      <tr>
+        <td>@product.Id</td>
+        <td>@product.Name</td>
+        <td>@product.Price</td>
+        <td>@product.Quantity</td>
+      </tr>
+        }
+    </table>
+</body>
+</html>
